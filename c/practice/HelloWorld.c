@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <math.h>
 
-
+/* 
+C Programming Tutorial for Beginners
+https://www.youtube.com/watch?v=KJgsSFOSQv0&t=2228s
+*/
 
 // 1_Hello World
 void Hello_world(){
