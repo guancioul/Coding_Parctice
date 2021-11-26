@@ -77,7 +77,23 @@ void Pointers_Arrays(){
         printf("Value = %d\n",A[i]);
         printf("Value = %d\n",*(A+i));
     }
+}
 
+// Array as function arguments
+int SumOfElements(int A[]){
+    int i, sum = 0;
+    int size = sizeof(A)/sizeof(A[0]);
+    printf("SOE - Size of A = %d, size of A[0] = %d\n", sizeof(A), sizeof(A[0]));
+    for(i = 0; i < size; i++){
+        sum+=A[i];
+    }
+    return sum;
+}
+void Array_function(){
+    int A[] = {1,2,3,4,5};
+    int total = SumOfElements(A);
+    printf("Sum of elements = %d\n", total);
+    printf("Main - Size of A = %d, size of A[0] = %d\n", sizeof(A), sizeof(A[0]));
 }
 
 int main(){
@@ -90,7 +106,10 @@ int main(){
     // Pointers as function arguments - call by reference
     //call_by_reference();
     // Pointers and Arrays
-    Pointers_Arrays();
+    //Pointers_Arrays();
+    // Array as function arguments
+    Array_function();
+
 
     return 0;
 }

@@ -1,4 +1,4 @@
-# Coding_Parctice
+# Coding Parctice
 Coding interview practice
 
 Practice basic c/c++ language
