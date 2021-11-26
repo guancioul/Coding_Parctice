@@ -1,36 +1,6 @@
 /*
 35. Search Insert Position
 https://leetcode.com/problems/search-insert-position/
-
-Example 1
-4
-1 3 5 6
-5
-Output: 2
-
-Example 2
-4
-1 3 5 6
-2
-Output: 1
-
-Example 3
-4
-1 3 5 6
-7
-Output: 4
-
-Example 4
-4
-1 3 5 6
-0
-Output: 0
-
-Example 1
-1
-1
-0
-Output: 0
 */
 
 #include <iostream>
@@ -58,14 +28,21 @@ public:
 };
 
 int main(){
-    int n, target; cin >> n;
-    vector<int> nums(n);
-    for(int i=0; i<n; i++){
-        cin >> nums[i];
-    }
-    cin >> target;
     Solution Sol;
-    int res = Sol.searchInsert(nums, target);
-    cout << res << "\n";
+    cout << "Example 1: \n";
+    int res = Sol.searchInsert({1,3,5,6}, 5);
+    cout << res << "\n"; // 2
+    cout << "Example 2: \n";
+    res = Sol.searchInsert({1,3,5,6}, 2);
+    cout << res << "\n"; // 1
+    cout << "Example 3: \n";
+    res = Sol.searchInsert({1,3,5,6}, 7);
+    cout << res << "\n"; // 4
+    cout << "Example 4: \n";
+    res = Sol.searchInsert({1,3,5,6}, 0);
+    cout << res << "\n"; // 0
+    cout << "Example 5: \n";
+    res = Sol.searchInsert({1}, 0);
+    cout << res << "\n"; // 0
     return 0;
 }
