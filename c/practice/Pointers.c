@@ -197,7 +197,7 @@ void malloc_calloc_realloc_free(){
         printf("%d ", A[i]);
     }
     int *B = (int*)realloc(A, 0); // equivalent to free(A)
-    //int *C = (int*)malloc(NULL, n*sizeof(int)); // equivalent to malloc
+    //int *C = (int*)realloc(NULL, n*sizeof(int)); // equivalent to malloc
     printf("\n");
     printf("Prev block address = %d, new address = %d\n",A, B);
     for(int i=0; i<n; i++){
