@@ -3,7 +3,7 @@
 typedef enum {false, true}bool;
 #include <stdbool.h>
 
-// 給一個int a[20]已排序的陣列，請寫一個function(a, size)能印出0~500的數字，且不包含a陣列內的元素，請用最少的時間和空間複雜度完成
+// Q1: 給一個int a[20]已排序的陣列，請寫一個function(a, size)能印出0~500的數字，且不包含a陣列內的元素，請用最少的時間和空間複雜度完成
 void phison_1(int* a, int size){
     int index = 0;
     for(int i=0; i<=500; i++){

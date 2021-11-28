@@ -77,8 +77,6 @@
 1. 群聯三題
 2. sorted array
     1. 兩個sorted array排序
-    2. 給定一個排序好的矩陣，從[1,1,1,...,0,0]用最少的資源找出最後一個1
-    3. sorted int array，回傳一個value的區間
 3. struct
     1. struct大小
     2. memory alignment
@@ -97,6 +95,8 @@
 6. binary search
     1. 實作 Binary search，找到回true，反之回false
     2. 給一串矩陣，先Sort從小到大，並Search某個參數在第幾個位置。(binary search)
+    3. sorted int array，回傳一個value的區間
+    4. 給定一個排序好的矩陣，從[1,1,1,...,0,0]用最少的資源找出最後一個1
 7. pointer
     1. pointer輸出
     2. pointer指標傳入function(function pointer)
@@ -118,6 +118,7 @@
     2. mutex critical section 中只能有一個 thread 進入；semaphore 可以有很多個，在 initial semaphore 時可以設定
     3. multi-thread跟deadlock問題
     4. function記憶體配置
+    5. Page / Block / Read / Write 等等的概念
 10. 應用題
     1. 排序法 時間複雜度
     2. 請我解釋一下 quick sort。我就盡量講，worst : O(n^2), average : O(nlogn)，然後敘述一下遞迴的時做法
