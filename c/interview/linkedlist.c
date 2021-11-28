@@ -35,19 +35,25 @@ void linkedlist_1(struct Node** n){
 }
 
 int linkedlist_2(struct Node* n){
-    int size = 0, index = 0, node_max = INT32_MIN;
-    struct Node* cur = n;
-    while(cur!=NULL){
-        size++;
-        cur = cur->next;
-    }
-    cur = n;
-    while((index++)<(size/2)){
-        if(cur->val > node_max)
-            node_max = cur->val;
-        cur = cur->next;
+    int node_max = INT32_MIN;
+    struct Node* slow = n;
+    struct Node* fast = n;
+    while(slow!=NULL && fast!=NULL && fast->next!=NULL){
+        if(slow->val > node_max) node_max = slow->val;
+        slow = slow->next;
+        fast = fast->next->next;
     }
     return node_max;
+}
+
+struct Node* linkedlist_3(struct Node* n){
+    struct Node* slow = n;
+    struct Node* fast = n;
+    while(slow!=NULL && fast!=NULL && fast->next!=NULL){
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
 }
 
 int main(){
@@ -70,4 +76,5 @@ int main(){
     linkedlist_1(&head);
     printlist(head);
     printf("half max = %d\n", linkedlist_2(head));
+    printf("middle node = %d\n", linkedlist_3(head)->val);
 }

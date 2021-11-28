@@ -95,7 +95,7 @@
 6. binary search
     1. 實作 Binary search，找到回true，反之回false
     2. 給一串矩陣，先Sort從小到大，並Search某個參數在第幾個位置。(binary search)
-    3. sorted int array，回傳一個value的區間
+    3. **sorted int array，回傳一個value的區間**
     4. 給定一個排序好的矩陣，從[1,1,1,...,0,0]用最少的資源找出最後一個1
 7. pointer
     1. pointer輸出
