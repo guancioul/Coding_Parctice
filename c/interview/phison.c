@@ -65,7 +65,7 @@ struct ListStruct{
     unsigned int NextPtr;
 };
 struct ListStruct ListArray[1000];
-#define NULL 0xFFFF
+#define MYNULL 0xFFFF
 unsigned int ListHead = 0;
 
 void init_phison3(){
@@ -74,20 +74,20 @@ void init_phison3(){
         ListArray[i].DataL = i;
         ListArray[i].NextPtr = i+1;
     }
-    ListArray[1000].NextPtr = NULL;
+    ListArray[1000].NextPtr = MYNULL;
 }
 
 void phison_3(unsigned int DATA_A, unsigned int DATA_B){
     bool found = 0;
     int found_entry = ListHead;
-    int pre_entry = NULL;
-    int next_entry = NULL;
+    int pre_entry = MYNULL;
+    int next_entry = MYNULL;
 
-    while(ListArray[found_entry].NextPtr != NULL){
+    while(ListArray[found_entry].NextPtr != MYNULL){
         //printf("%d %d %d\n", ListArray[found_entry].DataH, ListArray[found_entry].DataL, ListArray[found_entry].NextPtr);
         if(ListArray[found_entry].DataH == DATA_A && ListArray[found_entry].DataL == DATA_B){
             found = 1;
-            if(pre_entry == NULL)
+            if(pre_entry == MYNULL)
                 printf("pre_entry = NULL, found_entry = ListHead\n");
             else
                 printf("pre_entry = %d, found_entry = %d\n", pre_entry, found_entry);
