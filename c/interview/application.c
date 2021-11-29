@@ -18,6 +18,10 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+#include <time.h>
+#include <stdbool.h>
+#include <string.h>
 
 void swap(int* a, int* b){
     int temp = *a;
@@ -54,9 +58,47 @@ void printarray(int *a){
     }
 }
 
+bool application_4(int n){
+    //return n>0 && ((n)&(n-1)?false:true);
+    return (ceil(log10(n)/log10(2)) == floor(log10(n)/log10(2))) && (n!=0);
+}
+
+void application_5(int n){
+    int count = 0;
+    int* a = (int*)calloc(n, sizeof(int));
+    srand(time(NULL));
+    while(count<n){
+        int ran = rand()%n+1;
+        if(a[ran-1] == 1) continue;
+        else{
+            a[ran-1] = 1;
+            count++;
+            printf("%d ", ran);
+        }
+    }
+    free(a);
+}
+
+int application_7(int a, int b, int n){
+    if(n==0) return a;
+    if(n==1) return b;
+    return application_7(a, b, n-1) + application_7(a, b, n-2);
+}
+
+int application_8(int a, int b){
+    if(b==0) return a;
+    return application_8(b, a%b);
+}
+
 int main(){
     int a[10] = {9, 4, 1, 6, 7, 3, 8, 2, 5, 10};
     quicksort(a, 0, 9);
-    printarray(a);
-    
+    //printarray(a);
+
+    printf("%d is pow of 2: %d\n", 8, application_4(7));
+    //application_5(500);
+
+    printf("%d %d %d \n", 11, 12, application_7(11, 12, 3)); // 35
+    int c = 9, d = 7;
+    printf("%d %d gcd: %d\n", c, d, application_8(c, d));
 }

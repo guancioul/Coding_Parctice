@@ -103,7 +103,7 @@
     3. array指標操作(int a[5]={1,2,3,4,5}; 問印*(a++), *(++a) 的經典考題)
     4. 給一串記憶體位置與對參數，考pointer讀取參數填充給答案，並回答是Big-Endian/Little-Endian
 8. C語言觀念
-    1. volitile
+    1. volatile
     2. static function
     3. 講述global、static和local variable差異
     4. union
@@ -114,11 +114,11 @@
     9. linklist跟array的差異
     10. 甚麼是stack
 9. OS觀念
-    1. mutex, semaphor差異
-    2. mutex critical section 中只能有一個 thread 進入；semaphore 可以有很多個，在 initial semaphore 時可以設定
-    3. multi-thread跟deadlock問題
-    4. function記憶體配置
-    5. Page / Block / Read / Write 等等的概念
+    1. mutex, semaphore差異
+        mutex critical section 中只能有一個 thread 進入；semaphore 可以有很多個，在 initial semaphore 時可以設定
+    2. multi-thread跟deadlock問題
+    3. function記憶體配置
+    4. Page / Block / Read / Write 等等的概念 Nand flash的觀念
 10. 應用題
     1. 排序法 時間複雜度
     2. 請我解釋一下 quick sort。我就盡量講，worst : O(n^2), average : O(nlogn)，然後敘述一下遞迴的時做法

@@ -21,6 +21,7 @@ void printlist(struct Node* n){
 }
 
 void linkedlist_1(struct Node** n){
+    if(n == NULL) return ;
     struct Node* pre = NULL;
     struct Node* cur = *n;
     struct Node* nxt = (*n)->next;
@@ -57,7 +58,7 @@ struct Node* linkedlist_3(struct Node* n){
 }
 
 int main(){
-    struct Node* head = NULL;
+    struct Node* head;
     head = (struct Node*)malloc(sizeof(struct Node));
     head->val = 0;
     struct Node* cur = head;
