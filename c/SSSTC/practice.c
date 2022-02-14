@@ -1,43 +1,65 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
+#include <stdbool.h>
 
-struct Node {
-    int data;
-    struct Node* left;
-    struct Node* right;
+struct node {
+    int val;
+    struct node* left;
+    struct node* right;
 };
 
-int count_bit_1(int n){
+struct node* new_node(int key) {
+    struct node* p;
+    p = malloc(sizeof(struct node));
+    p->val = key;
+    p->left = NULL;
+    p->right = NULL;
+
+    return p;
+};
+
+void quiz_1(int nums) {
+    /*
+        寫一個function，計算輸入有幾個1
+    */
     int count = 0;
-    while(n) {
-        if(n&1) count++;
-        n>>=1;
+    while(nums>0) {
+        nums &= nums-1;
+        count++;
     }
-    return count;
+    printf("%d\n", count);
+
 }
 
-int isPrime(int n){
-    if(n<3 && n>0) return 1;
-    if(n%2==0){
-        return 0;
+void quiz_2(int nums) {
+    /*
+        判斷是不是質數 
+    */
+    bool isPrime = 1;
+    if(nums>0 && nums<2) {
+        isPrime = 1;
+    }else if(nums<=0) {
+        isPrime = 0;
     }else{
-        for(int i=3; i<=sqrt(n); i++){
-            if(n%i==0) return 0;
+        for(int i=3; i<=sqrt(nums); i++){
+            if(nums%i==0) isPrime = 0;
         }
-        return 1;
     }
-    return 0;
+    if(isPrime) {
+        printf("is prime\n");
+    }else {
+        printf("not prime\n");
+    }
 }
 
 int main() {
-    // 1. 寫一個function，計算輸入有機個1
-    printf("%d\n", count_bit_1(5));
+    int nums = 7;
+    quiz_1(nums);
+    quiz_2(nums);
+
+    struct node* testnode = new_node(7);
     
-    // 2. 求出一個值是不是質數
-    printf("%d\n", isPrime(23));
+    printf("%d\n", testnode->val);
     return 0;
-
-    // 3. Binary Tree
-
 }
